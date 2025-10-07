@@ -1,45 +1,24 @@
-# Dependencies
-# This directory contains all of your project's downloaded packages.
-# It can be very large and should always be ignored.
-# Recreate it by running 'npm install' or 'yarn install'.
-/node_modules
-
-# Build output
-# This is where compiled and bundled code is placed.
-# It is generated from your source code and should not be versioned.
-/dist
-/build
-
-# Environment variables
-# These files contain sensitive information like API keys (API_KEY, GOOGLE_MAPS_API_KEY).
-# NEVER commit them to your repository.
-# Instead, create a .env.example file with placeholder values to show other developers what variables are needed.
-.env
-.env.local
-.env.*.local
-.env.development
-.env.test
-.env.production
-
 # Logs
-# Log files can be large and change frequently.
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-*.log
+pnpm-debug.log*
+lerna-debug.log*
 
-# IDE and editor directories
-.vscode/
-.idea/
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
-
-# Operating System files
-.DS_Store
-Thumbs.db
-
-# Test runner files
-/coverage
