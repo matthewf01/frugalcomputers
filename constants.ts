@@ -12,8 +12,8 @@ export const NAV_LINKS: NavLinkItem[] = [
 // and add their paths to this list.
 export const CAROUSEL_IMAGES: string[] = [
   '/images/carousel/1.JPG', // Placeholder, assumes a public/images/carousel folder
-  '/images/carousel/2.JPG', // Placeholder, assumes a public/images/carousel folder
-  '/images/carousel/3.JPG', // Placeholder, assumes a public/images/carousel folder
-  '/images/carousel/4.JPG', // Placeholder, assumes a public/images/carousel folder
-  '/images/carousel/5.JPG', // Placeholder, assumes a public/images/carousel folder
+  '/images/carousel/2.jpg', // Placeholder, assumes a public/images/carousel folder
+  '/images/carousel/3.jpg', // Placeholder, assumes a public/images/carousel folder
+  '/images/carousel/4.jpg', // Placeholder, assumes a public/images/carousel folder
+  '/images/carousel/5.jpg', // Placeholder, assumes a public/images/carousel folder
 ];
