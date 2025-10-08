@@ -1,0 +1,60 @@
+
+# Frugal Computers Website - Quick Reference Guide
+
+This file contains helpful information for managing and updating your website content.
+
+---
+
+## 1. How to Add or Change Images in the Homepage Carousel
+
+The carousel is designed to be easy to update, but it requires two steps: adding the image file and then telling the code about it.
+
+**Step 1: Place Your Image File in the Correct Folder**
+   - The application has a special folder for static assets like images: `public/`.
+   - Inside that, there is a specific folder for the carousel: `public/images/carousel/`.
+   - **Action:** Place your new image files (e.g., `new-photo.jpg`) directly into the `public/images/carousel/` directory.
+
+**Step 2: Update the List of Images in the Code**
+   - Open the file `constants.ts`.
+   - Find the line that starts with `export const CAROUSEL_IMAGES`.
+   - This is a list of all the images the carousel will display.
+   - **Action:** Add the path to your new image to this list. The path must start with `images/carousel/`.
+
+   **Example:**
+   If you add a file named `6.JPG` to the `public/images/carousel/` folder, you would update the code like this:
+
+   ```javascript
+   // In constants.ts
+   export const CAROUSEL_IMAGES: string[] = [
+     'images/carousel/1.JPG',
+     'images/carousel/2.JPG',
+     'images/carousel/3.JPG',
+     'images/carousel/4.JPG',
+     'images/carousel/5.JPG',
+     'images/carousel/6.JPG', // <-- Add the new line here
+   ];
+   ```
+
+**IMPORTANT:** The website cannot automatically detect new files in a folder. You **must** complete both steps for new images to appear.
+
+---
+
+## 2. Address Autocomplete & Google Maps API Key
+
+The "Location" field on the Services page uses the Google Maps API to suggest addresses as you type.
+
+- **How it Works:** The feature is powered by the component in `components/common/AddressAutocomplete.tsx`.
+- **API Key:** This feature requires a **separate Google Maps API key**. The code expects this key to be available as the `process.env.GOOGLE_MAPS_API_KEY` environment variable. This is different from the `process.env.API_KEY` used for the AI features.
+- **Error Handling:** If the `GOOGLE_MAPS_API_KEY` is missing, invalid, or expired, the address autocomplete functionality will be gracefully disabled. The field will turn into a regular text box, and a small message ("Address autocomplete is temporarily unavailable.") will appear, so the form remains usable.
+
+---
+
+## 3. Where Does the Service Request Form Go?
+
+When a user fills out the request form on the "Services" page and clicks "Submit," the information is **NOT** sent to your email.
+
+- **Current Behavior:** The form data is collected and printed to the browser's developer console. This is a placeholder for development and testing. You can see this logic in the `handleSubmit` function within `components/Services.tsx`.
+- **For a Live Website:** To actually receive these requests, the form needs to be connected to a backend service. Popular options for this include:
+    - **EmailJS:** A service that allows you to send emails directly from your frontend code without needing your own server.
+    - **SendGrid or Mailgun:** More powerful email delivery services.
+    - **A custom backend server:** A small server you run that can receive the form data and then email it to you.

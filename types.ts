@@ -1,3 +1,5 @@
+// FIX: Import React to provide type definitions for React.ReactNode.
+import type React from 'react';
 
 export interface Service {
   icon: React.ReactNode;

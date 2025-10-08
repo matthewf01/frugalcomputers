@@ -1,5 +1,5 @@
-
 {
-  "name": "Frugal Computers Support & Repair",
-  "description": "A modern website for Frugal Computers, a personal technology support business. It features service listings, an AI-powered estimate tool, and a contact form."
+  "name": "Frugal Computers Site",
+  "description": "A modern website for Frugal Computers, a personal technology support business. It features service listings, an AI-powered estimate tool, and a contact form.",
+  "requestFramePermissions": []
 }
